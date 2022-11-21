@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var axios = require('axios')
 var cors = require('cors')
+var config = require("./config.json")
 var PORT = 3000
 
 app.use(express.json())
@@ -14,7 +15,7 @@ const options = {
     url: 'https://south-africa-lotto-live.p.rapidapi.com/subscribe_notification',
     headers: {
         "content-Type": "application/x-www-form-urlencoded",
-        "X-RapidAPI-Key": "80475a48a8msh7673b7f76f5b413p1539b6jsn2e75e5dd3e0d",
+        "X-RapidAPI-Key": config['key'],
         "X-RapidAPI-Host": "south-africa-lotto-live.p.rapidapi.com"
     },
     data: encodeParams
